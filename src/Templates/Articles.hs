@@ -3,11 +3,10 @@
 
 module Templates.Articles (pageArticles) where
 
-import Templates.Layout (baseTemplate)
 import qualified Text.Blaze.Html5 as H
 
 pageArticles :: H.Html
-pageArticles = baseTemplate "Articles" do
+pageArticles = do
   H.h1 "Articles"
   H.p "Technical and creative writings."
   H.ul do

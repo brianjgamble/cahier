@@ -1,8 +1,8 @@
 {-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE OverloadedStrings #-}
 
-import Text.Blaze.Html.Renderer.Text (renderHtml)
-import qualified Text.Blaze.Html5 as H
+import Network.Wai.Middleware.Static
+import qualified Text.Blaze.Html.Renderer.Text as R
 import Web.Scotty
 
 import Templates.About (pageAbout)
@@ -10,15 +10,28 @@ import Templates.Articles (pageArticles)
 import Templates.Blog (pageBlog)
 import Templates.Contact (pageContact)
 import Templates.Home (pageHome)
+import Templates.Layout (baseTemplate)
 
 main :: IO ()
 main = scotty 3000 do
-  get "/" $ blaze pageHome
-  get "/blog" $ blaze pageBlog
-  get "/articles" $ blaze pageArticles
-  get "/contact" $ blaze pageContact
-  get "/about" $ blaze pageAbout
+  middleware $ staticPolicy (noDots >-> addBase "static")
 
--- Helper: render Blaze HTML in Scotty
-blaze :: H.Html -> ActionM ()
-blaze = html . renderHtml
+  get "/" $
+    html . R.renderHtml $
+      baseTemplate "Home" pageHome
+
+  get "/blog" $
+    html . R.renderHtml $
+      baseTemplate "Blog" pageBlog
+
+  get "/articles" $
+    html . R.renderHtml $
+      baseTemplate "Articles" pageArticles
+
+  get "/contact" $
+    html . R.renderHtml $
+      baseTemplate "Contact" pageContact
+
+  get "/about" $
+    html . R.renderHtml $
+      baseTemplate "About" pageAbout

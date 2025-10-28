@@ -3,12 +3,11 @@
 
 module Templates.Contact (pageContact) where
 
-import Templates.Layout (baseTemplate)
 import qualified Text.Blaze.Html5 as H
 import qualified Text.Blaze.Html5.Attributes as A
 
 pageContact :: H.Html
-pageContact = baseTemplate "Contact" do
+pageContact = do
   H.h1 "Contact"
   H.p do
     "You can reach me at "

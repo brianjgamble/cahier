@@ -3,11 +3,10 @@
 
 module Templates.Blog (pageBlog) where
 
-import Templates.Layout (baseTemplate)
 import qualified Text.Blaze.Html5 as H
 
 pageBlog :: H.Html
-pageBlog = baseTemplate "Blog" do
+pageBlog = do
   H.h1 "Blog"
   H.p "Here are my latest posts."
   H.ul do

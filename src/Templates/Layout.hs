@@ -13,11 +13,7 @@ baseTemplate title content = H.docTypeHtml do
     H.meta H.! A.charset "UTF-8"
     H.meta H.! A.name "viewport" H.! A.content "width=device-width, initial-scale=1.0"
     H.title (H.toHtml title)
-    H.style
-      "body { font-family: sans-serif; max-width: 800px; margin: 2rem auto; line-height: 1.6; }\
-      \nav a { margin-right: 1em; text-decoration: none; color: #3366cc; }\
-      \nav a:hover { text-decoration: underline; }\
-      \hr { margin: 1.5em 0; }"
+    H.link H.! A.rel "stylesheet" H.! A.href "/css/style.css"
   H.body do
     H.nav do
       H.a H.! A.href "/" $ "Home"

@@ -1,0 +1,18 @@
+body {
+  font-family: sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  line-height: 1.6;
+}
+
+nav a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: #3366cc;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+hr {
+  margin: 1.5em 0;
+}
