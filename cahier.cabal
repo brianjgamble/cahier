@@ -1,0 +1,29 @@
+cabal-version:   3.14
+name:            cahier
+version:         0.1.0.0
+license:         BSD-3-Clause
+license-file:    LICENSE
+maintainer:      brianjgamble@users.noreply.github.com
+author:          Brian Gamble
+category:        Web
+build-type:      Simple
+extra-doc-files: CHANGELOG.md
+
+executable cahier
+    main-is:          Main.hs
+    hs-source-dirs:   app src
+    other-modules:
+        Templates.About
+        Templates.Articles
+        Templates.Blog
+        Templates.Contact
+        Templates.Home
+        Templates.Layout
+
+    default-language: GHC2024
+    ghc-options:      -Wall
+    build-depends:
+        base >=4.20 && <5,
+        scotty >=0.22 && <0.23,
+        blaze-html >=0.9.2 && <0.10,
+        text >=2.1.2 && <2.2
