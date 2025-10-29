@@ -13,6 +13,7 @@ baseTemplate title content = H.docTypeHtml do
     H.meta H.! A.charset "UTF-8"
     H.meta H.! A.name "viewport" H.! A.content "width=device-width, initial-scale=1.0"
     H.title (H.toHtml title)
+    H.link H.! A.rel "stylesheet" H.! A.href "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
     H.link H.! A.rel "stylesheet" H.! A.href "/css/style.css"
   H.body do
     H.nav do
