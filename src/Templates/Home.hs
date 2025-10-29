@@ -1,6 +1,3 @@
-{-# LANGUAGE BlockArguments #-}
-{-# LANGUAGE OverloadedStrings #-}
-
 module Templates.Home (pageHome) where
 
 import qualified Text.Blaze.Html5 as H

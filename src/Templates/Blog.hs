@@ -1,6 +1,3 @@
-{-# LANGUAGE BlockArguments #-}
-{-# LANGUAGE OverloadedStrings #-}
-
 module Templates.Blog (pageBlog) where
 
 import qualified Text.Blaze.Html5 as H

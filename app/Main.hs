@@ -1,6 +1,3 @@
-{-# LANGUAGE BlockArguments #-}
-{-# LANGUAGE OverloadedStrings #-}
-
 import Network.Wai.Middleware.Static
 import qualified Text.Blaze.Html.Renderer.Text as R
 import Web.Scotty

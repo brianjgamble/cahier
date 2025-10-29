@@ -1,6 +1,3 @@
-{-# LANGUAGE BlockArguments #-}
-{-# LANGUAGE OverloadedStrings #-}
-
 module Templates.Layout (baseTemplate) where
 
 import Data.Text.Lazy (Text)
