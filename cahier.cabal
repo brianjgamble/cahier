@@ -9,6 +9,7 @@ category: Web
 build-type: Simple
 extra-doc-files: CHANGELOG.md
 
+-- enable Haskell language features
 common common-extensions
   default-extensions:
     BlockArguments
