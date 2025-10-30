@@ -24,4 +24,9 @@ baseTemplate title content = H.docTypeHtml do
         H.a H.! A.href "/about" $ "About"
         H.a H.! A.href "#" H.! A.class_ "toggle" H.! A.id "theme_switcher" H.! A.title "Toggle light or dark theme" $ ""
     H.main H.! A.class_ "container" $ content
-    H.footer H.! A.class_ "container" $ ""
+    H.footer H.! A.class_ "container" $ do
+      H.small do
+        H.span $ "Made with \x2615 + "
+        H.a H.! A.href "https://www.haskell.org" H.! A.target "_blank" H.! A.rel "noreferrer noopener" $ "Haskell"
+        H.span " + "
+        H.a H.! A.href "https://picocss.com" H.! A.target "_blank" H.! A.rel "noreferrer noopener" $ "pico"

@@ -21,6 +21,7 @@ body {
 
 footer {
   border-top: 1px solid var(--pico-secondary-border);
+  text-align: center;
 }
 
 header {
