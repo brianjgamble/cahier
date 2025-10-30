@@ -25,7 +25,7 @@ const themeSwitcher = {
   },
 
   set_theme_icon(scheme) {
-    let icon = scheme == "dark" ? "☾" : "☀";
+    let icon = scheme == "dark" ? "\u{263E}" : "\u{2600}";
     document.getElementById(this.targetId).textContent = icon;
   },
 
