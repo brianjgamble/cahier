@@ -9,15 +9,19 @@ baseTemplate title content = H.docTypeHtml do
   H.head do
     H.meta H.! A.charset "UTF-8"
     H.meta H.! A.name "viewport" H.! A.content "width=device-width, initial-scale=1.0"
+    H.meta H.! A.name "color-scheme" H.! A.content "light dark"
     H.title (H.toHtml title)
-    H.link H.! A.rel "stylesheet" H.! A.href "https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
     H.link H.! A.rel "stylesheet" H.! A.href "/css/style.css"
+    H.script H.! A.src "/js/theme-switcher.js" $ ""
+    H.script H.! A.type_ "module" H.! A.src "/js/app.js" $ ""
   H.body do
-    H.nav do
-      H.a H.! A.href "/" $ "Home"
-      H.a H.! A.href "/blog" $ "Blog"
-      H.a H.! A.href "/articles" $ "Articles"
-      H.a H.! A.href "/contact" $ "Contact"
-      H.a H.! A.href "/about" $ "About"
-    H.hr
-    content
+    H.header H.! A.class_ "container" $ do
+      H.nav do
+        H.a H.! A.href "/" $ "Home"
+        H.a H.! A.href "/blog" $ "Blog"
+        H.a H.! A.href "/articles" $ "Articles"
+        H.a H.! A.href "/contact" $ "Contact"
+        H.a H.! A.href "/about" $ "About"
+        H.a H.! A.href "#" H.! A.class_ "toggle" H.! A.id "theme_switcher" H.! A.title "Toggle light or dark theme" $ ""
+    H.main H.! A.class_ "container" $ content
+    H.footer H.! A.class_ "container" $ ""
