@@ -1,4 +1,4 @@
-module Config (webOptions) where
+module Config (getOptions) where
 
 import Data.Maybe (fromMaybe)
 import Data.String (fromString)
@@ -7,8 +7,8 @@ import Network.Wai.Handler.Warp (HostPreference, defaultSettings, setBeforeMainL
 import System.Environment (lookupEnv)
 import Web.Scotty
 
-webOptions :: IO Options
-webOptions = do
+getOptions :: IO Options
+getOptions = do
   -- Read environment variables
   maybePort <- lookupEnv "PORT"
   maybeHost <- lookupEnv "HOST"

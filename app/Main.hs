@@ -1,4 +1,4 @@
-import Config (webOptions)
+import Config (getOptions)
 import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static
 import Templates.About (pageAbout)
@@ -12,7 +12,7 @@ import Web.Scotty
 
 main :: IO ()
 main = do
-  opts <- webOptions
+  opts <- getOptions
   scottyOpts opts do
     middleware $ staticPolicy (noDots >-> addBase "static")
     middleware logStdoutDev
