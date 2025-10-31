@@ -1,8 +1,14 @@
 module Templates.Home (pageHome) where
 
-import qualified Text.Blaze.Html5 as H
+import Templates.Layout (layoutTemplate)
+import Text.Blaze.Html (Html)
+import Text.Hamlet (shamlet)
 
-pageHome :: H.Html
-pageHome = do
-  H.h1 "Welcome to My Haskell Website"
-  H.p "This is the home page. Built with Scotty and Blaze HTML."
+pageHome :: Html
+pageHome =
+  layoutTemplate
+    "Home"
+    [shamlet|
+  <h1>Welcome to My Haskell Website
+  <p>This is the home page. Built with Scotty and Blaze HTML.
+|]

@@ -1,12 +1,18 @@
 module Templates.Blog (pageBlog) where
 
-import qualified Text.Blaze.Html5 as H
+import Templates.Layout (layoutTemplate)
+import Text.Blaze.Html (Html)
+import Text.Hamlet (shamlet)
 
-pageBlog :: H.Html
-pageBlog = do
-  H.h1 "Blog"
-  H.p "Here are my latest posts."
-  H.ul do
-    H.li "Learning Haskell"
-    H.li "Functional Web Development"
-    H.li "Building with Scotty and Blaze"
+pageBlog :: Html
+pageBlog =
+  layoutTemplate
+    "Blog"
+    [shamlet|
+  <h1>Blog
+  <p>Here are my latest posts.
+  <ul>
+    <li>Learning Haskell
+    <li>Functional Web Development
+    <li>Building with Scotty and Blaze
+|]

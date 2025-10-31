@@ -1,8 +1,14 @@
 module Templates.About (pageAbout) where
 
-import qualified Text.Blaze.Html5 as H
+import Templates.Layout (layoutTemplate)
+import Text.Blaze.Html (Html)
+import Text.Hamlet (shamlet)
 
-pageAbout :: H.Html
-pageAbout = do
-  H.h1 "About"
-  H.p "This website is built using Haskell, Scotty, and Blaze HTML templates."
+pageAbout :: Html
+pageAbout =
+  layoutTemplate
+    "About"
+    [shamlet|
+  <h1>About
+  <p>This website is built using Haskell, Scotty, and Blaze HTML templates.
+|]

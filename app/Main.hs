@@ -6,9 +6,12 @@ import Templates.Articles (pageArticles)
 import Templates.Blog (pageBlog)
 import Templates.Contact (pageContact)
 import Templates.Home (pageHome)
-import Templates.Layout (baseTemplate)
-import qualified Text.Blaze.Html.Renderer.Text as R
+import Text.Blaze.Html (Html)
+import Text.Blaze.Html.Renderer.Text qualified as R
 import Web.Scotty
+
+render :: Html -> ActionM ()
+render = html . R.renderHtml
 
 main :: IO ()
 main = do
@@ -17,22 +20,8 @@ main = do
     middleware $ staticPolicy (noDots >-> addBase "static")
     middleware logStdoutDev
 
-    get "/" $
-      html . R.renderHtml $
-        baseTemplate "Home" pageHome
-
-    get "/blog" $
-      html . R.renderHtml $
-        baseTemplate "Blog" pageBlog
-
-    get "/articles" $
-      html . R.renderHtml $
-        baseTemplate "Articles" pageArticles
-
-    get "/contact" $
-      html . R.renderHtml $
-        baseTemplate "Contact" pageContact
-
-    get "/about" $
-      html . R.renderHtml $
-        baseTemplate "About" pageAbout
+    get "/" $ render pageHome
+    get "/blog" $ render pageBlog
+    get "/articles" $ render pageArticles
+    get "/contact" $ render pageContact
+    get "/about" $ render pageAbout

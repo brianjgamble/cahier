@@ -1,32 +1,38 @@
-module Templates.Layout (baseTemplate) where
+module Templates.Layout (layoutTemplate) where
 
-import Data.Text.Lazy (Text)
-import qualified Text.Blaze.Html5 as H
-import qualified Text.Blaze.Html5.Attributes as A
+import Data.Text qualified as T
+import Text.Blaze.Html (Html)
+import Text.Hamlet (shamlet)
 
-baseTemplate :: Text -> H.Html -> H.Html
-baseTemplate title content = H.docTypeHtml do
-  H.head do
-    H.meta H.! A.charset "UTF-8"
-    H.meta H.! A.name "viewport" H.! A.content "width=device-width, initial-scale=1.0"
-    H.meta H.! A.name "color-scheme" H.! A.content "light dark"
-    H.title (H.toHtml title)
-    H.link H.! A.rel "stylesheet" H.! A.href "/css/style.css"
-    H.script H.! A.src "/js/theme-switcher.js" $ ""
-    H.script H.! A.type_ "module" H.! A.src "/js/app.js" $ ""
-  H.body do
-    H.header H.! A.class_ "container" $ do
-      H.nav do
-        H.a H.! A.href "/" $ "Home"
-        H.a H.! A.href "/blog" $ "Blog"
-        H.a H.! A.href "/articles" $ "Articles"
-        H.a H.! A.href "/contact" $ "Contact"
-        H.a H.! A.href "/about" $ "About"
-        H.a H.! A.href "#" H.! A.class_ "toggle" H.! A.id "theme_switcher" H.! A.title "Toggle light or dark theme" $ ""
-    H.main H.! A.class_ "container" $ content
-    H.footer H.! A.class_ "container" $ do
-      H.small do
-        H.span $ "Made with \x2615 + "
-        H.a H.! A.href "https://www.haskell.org" H.! A.target "_blank" H.! A.rel "noreferrer noopener" $ "Haskell"
-        H.span " + "
-        H.a H.! A.href "https://picocss.com" H.! A.target "_blank" H.! A.rel "noreferrer noopener" $ "pico"
+layoutTemplate :: T.Text -> Html -> Html
+layoutTemplate pageTitle content =
+  [shamlet|
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <title>#{pageTitle}
+    <link rel="stylesheet" href="css/pico.sand.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/js/theme-switcher.js">
+    <script type="module" src="/js/app.js">
+  <body>
+    <header .container>
+      <nav>
+        <a href="/">Home
+        <a href="/blog">Blog
+        <a href="/articles">Articles
+        <a href="/contact">Contact
+        <a href="/about">About
+        <a href="#" .toggle id="theme_switcher" title="Toggle light or dark theme">
+    <main .container>
+      #{content}
+    <footer .container>
+      <small>
+        Made with &#9749;&nbsp;+&nbsp;
+        <a href="https://www.haskell.org" target="_blank" rel="noreferrer noopener">Haskell
+        &nbsp;+&nbsp;
+        <a href="https://picocss.com" target="_blank" rel="noreferrer noopener">pico
+|]
