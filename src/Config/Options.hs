@@ -18,10 +18,10 @@ build = do
       host = fromString (fromMaybe "127.0.0.1" maybeHost) :: HostPreference
 
   -- Build Warp settings
-  let settings = setPort port $ setHost host $ defaultSettings
+  let settings = setPort port $ setHost host defaultSettings
 
   -- Log when the server starts
-  let settings_with_log = setBeforeMainLoop (putStrLn $ [i|Server running on #{host}:#{port}|]) settings
+  let settings_with_log = setBeforeMainLoop (putStrLn [i|Server running on #{host}:#{port}|]) settings
 
   -- Scotty options
   pure $ Options 0 settings_with_log
