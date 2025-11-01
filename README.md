@@ -3,11 +3,13 @@
     <a href="https://www.haskell.org/" alt="Haskell"><img src="https://img.shields.io/badge/Haskell-5e5086?logo=haskell&logoColor=white" /></a>
 </p>
 
-# Cahier
+<p style="font-size: 48px;">
+  &#x1F4D3; Cahier
+</p>
 
 ## What is this?
 
-This is the code for my personal website.
+This is the code for my personal ~~notebook~~ website.
 
 It is a [Haskell](https://www.haskell.org/) application built with the [Scotty](https://hackage.haskell.org/package/scotty) web framework, [shakespeare](https://hackage.haskell.org/package/shakespeare) template engine, [pico](https://picocss.com/) css framework, and a few other great libraries.
 
