@@ -2,7 +2,7 @@ cabal-version: 3.14
 name: cahier
 version: 0.1.0.0
 license: BSD-3-Clause
-license-file: LICENSE
+license-file: LICENSE-code.md
 maintainer: brianjgamble@users.noreply.github.com
 author: Brian Gamble
 category: Web
