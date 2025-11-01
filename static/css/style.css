@@ -1,5 +1,3 @@
-@import "/css/pico.sand.min.css";
-
 html[data-theme="dark"] {
   --pico-primary: #b5b3ad;
   --pico-background-color: #122330;
