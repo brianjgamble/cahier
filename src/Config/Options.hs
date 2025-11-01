@@ -1,4 +1,4 @@
-module Config (getOptions) where
+module Config.Options (build) where
 
 import Data.Maybe (fromMaybe)
 import Data.String (fromString)
@@ -7,8 +7,8 @@ import Network.Wai.Handler.Warp (HostPreference, defaultSettings, setBeforeMainL
 import System.Environment (lookupEnv)
 import Web.Scotty
 
-getOptions :: IO Options
-getOptions = do
+build :: IO Options
+build = do
   -- Read environment variables
   maybePort <- lookupEnv "PORT"
   maybeHost <- lookupEnv "HOST"
@@ -20,8 +20,8 @@ getOptions = do
   -- Build Warp settings
   let settings = setPort port $ setHost host $ defaultSettings
 
-  -- Optional: Log when the server starts
+  -- Log when the server starts
   let settings_with_log = setBeforeMainLoop (putStrLn $ [i|Server running on #{host}:#{port}|]) settings
 
   -- Scotty options
-  pure $ Options 0 settings_with_log -- first arg is verbose mode (0 = silent)
+  pure $ Options 0 settings_with_log

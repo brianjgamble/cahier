@@ -20,11 +20,10 @@ executable cahier
   import: common-extensions
   main-is: Main.hs
   hs-source-dirs:
-    app
     src
 
   other-modules:
-    Config
+    Config.Options
     Templates.About
     Templates.Articles
     Templates.Blog

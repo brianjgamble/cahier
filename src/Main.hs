@@ -1,4 +1,4 @@
-import Config (getOptions)
+import Config.Options (build)
 import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static
 import Templates.About (pageAbout)
@@ -15,7 +15,7 @@ render = html . R.renderHtml
 
 main :: IO ()
 main = do
-  opts <- getOptions
+  opts <- build
   scottyOpts opts do
     middleware $ staticPolicy (noDots >-> addBase "static")
     middleware logStdoutDev
