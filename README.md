@@ -3,9 +3,7 @@
     <a href="https://www.haskell.org/" alt="Haskell"><img src="https://img.shields.io/badge/Haskell-5e5086?logo=haskell&logoColor=white" /></a>
 </p>
 
-<p style="font-size: 48px;">
-  &#x1F4D3; Cahier
-</p>
+# &#x1F4D3; Cahier
 
 ## What is this?
 
