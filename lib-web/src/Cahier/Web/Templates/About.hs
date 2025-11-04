@@ -1,6 +1,6 @@
-module Templates.About (pageAbout) where
+module Cahier.Web.Templates.About (pageAbout) where
 
-import Templates.Layout (layoutTemplate)
+import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 

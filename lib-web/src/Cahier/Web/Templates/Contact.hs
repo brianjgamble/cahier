@@ -1,6 +1,6 @@
-module Templates.Contact (pageContact) where
+module Cahier.Web.Templates.Contact (pageContact) where
 
-import Templates.Layout (layoutTemplate)
+import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 

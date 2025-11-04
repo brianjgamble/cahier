@@ -1,0 +1,8 @@
+packages:
+  ./cahier.cabal
+  ./lib-web/lib-web.cabal
+
+-- Optional: common settings
+package *
+  ghc-options: -Wall
+  optimization: True

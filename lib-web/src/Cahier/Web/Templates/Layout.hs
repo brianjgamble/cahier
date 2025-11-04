@@ -1,4 +1,4 @@
-module Templates.Layout (layoutTemplate) where
+module Cahier.Web.Templates.Layout (layoutTemplate) where
 
 import Data.Text qualified as T
 import Text.Blaze.Html (Html)

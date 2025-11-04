@@ -1,6 +1,6 @@
-module Templates.Blog (pageBlog) where
+module Cahier.Web.Templates.Blog (pageBlog) where
 
-import Templates.Layout (layoutTemplate)
+import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 

@@ -1,11 +1,11 @@
 import Config (scottyOptions)
 import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static
-import Templates.About (pageAbout)
-import Templates.Articles (pageArticles)
-import Templates.Blog (pageBlog)
-import Templates.Contact (pageContact)
-import Templates.Home (pageHome)
+import Cahier.Web.Templates.About (pageAbout)
+import Cahier.Web.Templates.Articles (pageArticles)
+import Cahier.Web.Templates.Blog (pageBlog)
+import Cahier.Web.Templates.Contact (pageContact)
+import Cahier.Web.Templates.Home (pageHome)
 import Text.Blaze.Html (Html)
 import Text.Blaze.Html.Renderer.Text qualified as R
 import Web.Scotty
