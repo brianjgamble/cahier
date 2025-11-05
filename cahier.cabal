@@ -1,6 +1,6 @@
 cabal-version: 3.14
 name: cahier
-version: 0.1.0.0
+version: 0.2.0.0
 license: BSD-3-Clause
 license-file: LICENSE-code.md
 maintainer: brianjgamble@users.noreply.github.com
@@ -27,8 +27,8 @@ executable cahier
     warp >=3.4.9 && <3.5,
 
   default-extensions:
-    QuasiQuotes
     BlockArguments
     OverloadedStrings
+    QuasiQuotes
 
   default-language: GHC2024
