@@ -24,3 +24,14 @@ library
     QuasiQuotes
 
   default-language: GHC2024
+
+test-suite web-tests
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  hs-source-dirs: test
+  build-depends:
+    base >=4.14 && <5,
+    lib-web,
+    tasty >=1.4 && <2,
+    tasty-hunit >=0.10 && <0.11,
+  default-language:  GHC2024
