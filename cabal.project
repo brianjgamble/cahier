@@ -1,5 +1,6 @@
 packages:
   ./cahier.cabal
+  ./lib-core/lib-core.cabal
   ./lib-web/lib-web.cabal
 
 -- Optional: common settings
