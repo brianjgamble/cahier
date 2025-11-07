@@ -40,3 +40,13 @@ test-suite web-tests
     tasty-hunit >=0.10 && <0.11,
 
   default-language: GHC2024
+
+test-suite cahier-doctest
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Doctest.hs
+  build-depends:
+    base >=4.14 && <5,
+    doctest >=0.22,
+
+  default-language: GHC2024
