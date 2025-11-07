@@ -34,13 +34,13 @@ jobs:
             ${{ runner.os }}-cabal-
 
       - name: Update cabal package list
-        run: cabal update
+        run: cabal v2-update
 
       - name: Build dependencies
-        run: cabal build --only-dependencies --enable-tests
+        run: cabal v2-build --only-dependencies --enable-tests
 
       - name: Build project
-        run: cabal build --enable-tests
+        run: cabal v2-build --enable-tests
 
       - name: Run tests
-        run: cabal test all
+        run: cabal v2-test all
