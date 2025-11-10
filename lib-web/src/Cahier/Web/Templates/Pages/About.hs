@@ -1,4 +1,4 @@
-module Cahier.Web.Templates.About (pageAbout) where
+module Cahier.Web.Templates.Pages.About where
 
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)

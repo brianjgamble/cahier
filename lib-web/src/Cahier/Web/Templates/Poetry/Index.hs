@@ -1,15 +1,15 @@
-module Cahier.Web.Templates.Articles (pageArticles) where
+module Cahier.Web.Templates.Poetry.Index where
 
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 
-pageArticles :: Html
-pageArticles =
+pagePoetry :: Html
+pagePoetry =
   layoutTemplate
-    "Articles"
+    "Poetry"
     [shamlet|
-  <h1>Articles
+  <h1>Poetry
   <p>Technical and creative writings.
   <ul>
     <li>Monads Explained Simply

@@ -24,7 +24,7 @@ layoutTemplate pageTitle content =
       <nav>
         <a href="/">Home
         <a href="/blog">Blog
-        <a href="/articles">Articles
+        <a href="/poetry">Poetry
         <a href="/contact">Contact
         <a href="/about">About
         <a href="#" .toggle id="theme_switcher" title="Toggle light or dark theme">

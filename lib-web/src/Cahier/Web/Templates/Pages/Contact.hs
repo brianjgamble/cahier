@@ -1,4 +1,4 @@
-module Cahier.Web.Templates.Contact (pageContact) where
+module Cahier.Web.Templates.Pages.Contact where
 
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)

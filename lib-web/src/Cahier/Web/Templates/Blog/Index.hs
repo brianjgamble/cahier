@@ -1,4 +1,4 @@
-module Cahier.Web.Templates.Blog (pageBlog) where
+module Cahier.Web.Templates.Blog.Index (pageBlog) where
 
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)

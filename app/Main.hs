@@ -1,11 +1,10 @@
+import Cahier.Web.Controllers.Blog qualified as Blog
+import Cahier.Web.Controllers.Pages qualified as Pages
+import Cahier.Web.Controllers.Poetry qualified as Poetry
+
 import Config (scottyOptions)
 import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static
-import Cahier.Web.Templates.About (pageAbout)
-import Cahier.Web.Templates.Articles (pageArticles)
-import Cahier.Web.Templates.Blog (pageBlog)
-import Cahier.Web.Templates.Contact (pageContact)
-import Cahier.Web.Templates.Home (pageHome)
 import Text.Blaze.Html (Html)
 import Text.Blaze.Html.Renderer.Text qualified as R
 import Web.Scotty
@@ -20,8 +19,8 @@ main = do
     middleware $ staticPolicy (noDots >-> addBase "static")
     middleware logStdoutDev
 
-    get "/" $ render pageHome
-    get "/blog" $ render pageBlog
-    get "/articles" $ render pageArticles
-    get "/contact" $ render pageContact
-    get "/about" $ render pageAbout
+    get "/" $ render Pages.home
+    get "/blog" $ render Blog.index
+    get "/poetry" $ render Poetry.index
+    get "/contact" $ render Pages.contact
+    get "/about" $ render Pages.about

@@ -6,11 +6,14 @@ build-type: Simple
 library
   hs-source-dirs: src
   exposed-modules:
-    Cahier.Web.Templates.About
-    Cahier.Web.Templates.Articles
-    Cahier.Web.Templates.Blog
-    Cahier.Web.Templates.Contact
-    Cahier.Web.Templates.Home
+    Cahier.Web.Controllers.Blog
+    Cahier.Web.Controllers.Pages
+    Cahier.Web.Controllers.Poetry
+    Cahier.Web.Templates.Pages.About
+    Cahier.Web.Templates.Poetry.Index
+    Cahier.Web.Templates.Blog.Index
+    Cahier.Web.Templates.Pages.Contact
+    Cahier.Web.Templates.Pages.Home
     Cahier.Web.Templates.Layout
     Cahier.Web.Url
 
