@@ -1,4 +1,4 @@
-module Cahier.Core.Content.Cache (ContentCache, getAllPoems, getAllPosts, getPoem, getPost, initCache) where
+module Cahier.Core.Content.Cache (ContentDigest, ContentCache, getAllPoems, getAllPosts, getPoem, getPost, initCache) where
 
 import Cahier.Core.Content.Types
 import Data.List (sortOn)
@@ -8,21 +8,28 @@ import Data.Ord (Down (..))
 import Data.Text (Text)
 import Data.Time.Calendar (Day)
 
+-- | Digest information for content listings
+data ContentDigest = ContentDigest
+  { title :: Text
+  , slug :: Text
+  }
+  deriving (Show, Eq)
+
 -- | Cache to hold all loaded content
 data ContentCache = ContentCache
   { poems :: Map Text Poem -- Keyed by slug
   , posts :: Map Text BlogPost -- Keyed by slug
-  , poemsByTitle :: [Poem] -- Sorted by title, ascending
-  , postsByDate :: [BlogPost] -- Sorted by date, newest first
+  , poemsByTitle :: [ContentDigest] -- Sorted by title, ascending
+  , postsByDate :: [ContentDigest] -- Sorted by date, newest first
   }
   deriving (Show)
 
 -- | Get all poems sorted by year (newest first)
-getAllPoems :: ContentCache -> [Poem]
+getAllPoems :: ContentCache -> [ContentDigest]
 getAllPoems = poemsByTitle
 
 -- | Get all posts sorted by date (newest first)
-getAllPosts :: ContentCache -> [BlogPost]
+getAllPosts :: ContentCache -> [ContentDigest]
 getAllPosts = postsByDate
 
 -- | Get a single poem by slug
@@ -39,16 +46,28 @@ initCache postsList poemsList =
   ContentCache
     { poems = poemsMap
     , posts = postsMap
-    , poemsByTitle = sortedPoems
-    , postsByDate = sortedPosts
+    , poemsByTitle = sortedPoemDigests
+    , postsByDate = sortedPostDigests
     }
  where
   poemsMap = Map.fromList poemsList
   postsMap = Map.fromList postsList
-  sortedPoems = sortOn (Down . getPoemTitle) (map snd poemsList)
-  sortedPosts = sortOn (Down . getPostDate) (map snd postsList)
+  sortedPoems = sortOn (Down . getPoemTitle . snd) poemsList
+  sortedPosts = sortOn (Down . getPostDate . snd) postsList
+  sortedPoemDigests =
+    map
+      ( \(slug, Poem (PoemMetadata title _ _) _) ->
+          ContentDigest title slug
+      )
+      sortedPoems
+  sortedPostDigests =
+    map
+      ( \(slug, BlogPost (PostMetadata title _ _ _ _) _) ->
+          ContentDigest title slug
+      )
+      sortedPosts
 
--- Extract year from poem for sorting (treats Nothing as 0)
+-- Extract title from poem
 getPoemTitle :: Poem -> Text
 getPoemTitle (Poem (PoemMetadata title _ _) _) = title
 
