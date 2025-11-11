@@ -67,3 +67,14 @@ main {
 a.toggle {
   text-decoration: none;
 }
+
+.social {
+  margin-top: 3rem;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .social {
+    width: 75%;
+  }
+}
