@@ -29,3 +29,6 @@ Why code it in Haskell? Why not? Building a real project will help me learn the 
 ## License
 
 The code in this repository is licensed under the [BSD 3-Clause License](LICENSE-code.md).
+
+The written content (blog posts, poetry, and other prose) is
+Copyright © 2014 - 2025 Brian J. Gamble. All Rights Reserved.
