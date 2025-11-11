@@ -20,7 +20,7 @@ main = do
     middleware logStdoutDev
 
     get "/" $ render Pages.home
-    get "/blog" $ render Blog.index
+    get "/posts" $ render Blog.index
     get "/poetry" $ render Poetry.index
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about

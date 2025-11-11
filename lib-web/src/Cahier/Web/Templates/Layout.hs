@@ -23,7 +23,7 @@ layoutTemplate pageTitle content =
     <header .container>
       <nav>
         <a href="/">Home
-        <a href="/blog">Blog
+        <a href="/posts">Blog
         <a href="/poetry">Poetry
         <a href="/contact">Contact
         <a href="/about">About
