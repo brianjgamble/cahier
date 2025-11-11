@@ -9,6 +9,10 @@ pageHome =
   layoutTemplate
     "Home"
     [shamlet|
-  <h1>Welcome to My Haskell Website
-  <p>This is the home page. Built with Scotty and Blaze HTML.
+  <hgroup>
+    <h1>Brian J. Gamble
+    <h2>
+      Believer &bullet; Developer &bullet; Writer
+  <p>
+    Building software is my bread and butter, but I'm also a writer.  I write poetry, and I'm working on my own fantasy world and stories.
 |]
