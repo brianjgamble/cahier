@@ -31,9 +31,13 @@ layoutTemplate pageTitle content =
     <main .container>
       #{content}
     <footer .container>
-      <small>
-        Made with &#9749;&nbsp;+&nbsp;
-        <a href="https://www.haskell.org" target="_blank" rel="noreferrer noopener">Haskell
-        &nbsp;+&nbsp;
-        <a href="https://picocss.com" target="_blank" rel="noreferrer noopener">pico
+      <div>
+        <small>
+          Made with &#9749;&nbsp;+&nbsp;
+          <a href="https://www.haskell.org" target="_blank" rel="noreferrer noopener">Haskell
+          &nbsp;+&nbsp;
+          <a href="https://picocss.com" target="_blank" rel="noreferrer noopener">pico
+      <div>
+        <small>
+          Copyright &copy; 2014-2025 Brian J. Gamble.  All rights reserved.
 |]
