@@ -76,7 +76,7 @@ sortedPostDigests = map (\(slug, BlogPost (PostMetadata title _ _ _ _) _) -> Con
 
 -- Sort poems by title
 sortedPoems :: [(Text, Poem)] -> [(Text, Poem)]
-sortedPoems = sortOn (Down . getPoemTitle . snd)
+sortedPoems = sortOn (getPoemTitle . snd)
 
 -- Sort posts by date
 sortedPosts :: [(Text, BlogPost)] -> [(Text, BlogPost)]

@@ -23,7 +23,7 @@ Throws ContentLoadException if any files fail to load
 loadContentCache :: FilePath -> IO ContentCache
 loadContentCache contentPath = do
   let postsPath = contentPath </> "posts"
-      poemsPath = contentPath </> "poems"
+      poemsPath = contentPath </> "poetry"
 
   -- Load all posts and poems
   (postsList, postErrors) <- loadAllPosts postsPath
