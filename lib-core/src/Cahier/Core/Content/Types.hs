@@ -7,11 +7,11 @@ import GHC.Generics
 
 -- | Metadata for blog posts
 data PostMetadata = PostMetadata
-  { title :: Text
-  , date :: Day
-  , author :: Maybe Text
-  , tags :: [Text]
-  , description :: Maybe Text
+  { postTitle :: Text
+  , postDate :: Day
+  , postAuthor :: Maybe Text
+  , postTags :: [Text]
+  , postDescription :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
@@ -26,9 +26,9 @@ instance FromJSON PostMetadata where
 
 -- | Metadata for poetry
 data PoemMetadata = PoemMetadata
-  { title :: Text
-  , date :: Day
-  , author :: Maybe Text
+  { poemTitle :: Text
+  , poemDate :: Day
+  , poemAuthor :: Maybe Text
   }
   deriving (Generic, Show, Eq)
 
@@ -41,15 +41,15 @@ instance FromJSON PoemMetadata where
 
 -- | Complete blog post with metadata and content
 data BlogPost = BlogPost
-  { metadata :: PostMetadata
-  , content :: Text
+  { postMetadata :: PostMetadata
+  , postContent :: Text
   }
   deriving (Show, Eq)
 
 -- | Complete poem with metadata and content
 data Poem = Poem
-  { metadata :: PoemMetadata
-  , content :: Text
+  { poemMetadata :: PoemMetadata
+  , poemContent :: Text
   }
   deriving (Show, Eq)
 

@@ -26,7 +26,6 @@ library
 
   default-extensions:
     DeriveGeneric
-    DuplicateRecordFields
     OverloadedStrings
 
   default-language: GHC2024

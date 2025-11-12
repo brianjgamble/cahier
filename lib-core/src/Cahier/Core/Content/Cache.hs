@@ -10,8 +10,8 @@ import Data.Time.Calendar (Day)
 
 -- | Digest information for content listings
 data ContentDigest = ContentDigest
-  { title :: Text
-  , slug :: Text
+  { digestTitle :: Text
+  , digestSlug :: Text
   }
   deriving (Show, Eq)
 
@@ -52,11 +52,11 @@ initCache posts poems =
 
 -- Extract title from poem
 getPoemTitle :: Poem -> Text
-getPoemTitle (Poem (PoemMetadata title _ _) _) = title
+getPoemTitle (Poem (PoemMetadata poemTitle _ _) _) = poemTitle
 
 -- Extract date from post for sorting
 getPostDate :: BlogPost -> Day
-getPostDate (BlogPost (PostMetadata _ date _ _ _) _) = date
+getPostDate (BlogPost (PostMetadata _ postDate _ _ _) _) = postDate
 
 -- Convert the incoming poem tuples to a map of poems
 poemsMap :: [(Text, Poem)] -> Map Text Poem
@@ -68,11 +68,11 @@ postsMap = Map.fromList
 
 -- Convert the poems into a sorted list of ContentDigests
 sortedPoemDigests :: [(Text, Poem)] -> [ContentDigest]
-sortedPoemDigests = map (\(slug, Poem (PoemMetadata title _ _) _) -> ContentDigest title slug) . sortedPoems
+sortedPoemDigests = map (\(slug, Poem (PoemMetadata poemTitle _ _) _) -> ContentDigest poemTitle slug) . sortedPoems
 
 -- Convert the posts into a sorted list of ContentDigests
 sortedPostDigests :: [(Text, BlogPost)] -> [ContentDigest]
-sortedPostDigests = map (\(slug, BlogPost (PostMetadata title _ _ _ _) _) -> ContentDigest title slug) . sortedPosts
+sortedPostDigests = map (\(slug, BlogPost (PostMetadata postTitle _ _ _ _) _) -> ContentDigest postTitle slug) . sortedPosts
 
 -- Sort poems by title
 sortedPoems :: [(Text, Poem)] -> [(Text, Poem)]
