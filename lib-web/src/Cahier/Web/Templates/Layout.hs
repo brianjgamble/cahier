@@ -22,12 +22,17 @@ layoutTemplate pageTitle content =
   <body>
     <header .container>
       <nav>
-        <a href="/">Home
-        <a href="/posts">Blog
-        <a href="/poetry">Poetry
-        <a href="/contact">Contact
-        <a href="/about">About
-        <a href="#" .toggle id="theme_switcher" title="Toggle light or dark theme">
+        <ul .mobile_nav>
+          <li>
+            <details .dropdown>
+              <summary>Navigation
+              <ul>
+                #{links}
+        <ul .desktop_nav>
+          #{links}
+        <ul>
+          <li>
+            <a href="#" .toggle id="theme_switcher" title="Toggle light or dark theme">
     <main .container>
       #{content}
     <footer .container>
@@ -40,4 +45,19 @@ layoutTemplate pageTitle content =
       <div>
         <small>
           Copyright &copy; 2014-2025 Brian J. Gamble.  All rights reserved.
+|]
+
+links :: Html
+links =
+  [shamlet|
+<li>
+  <a href="/">Home
+<li>
+  <a href="/posts">Blog
+<li>
+  <a href="/poetry">Poetry
+<li>
+  <a href="/contact">Contact
+<li>
+  <a href="/about">About
 |]
