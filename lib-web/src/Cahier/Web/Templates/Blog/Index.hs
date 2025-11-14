@@ -1,18 +1,18 @@
 module Cahier.Web.Templates.Blog.Index (pageBlog) where
 
+import Cahier.Core.Content (ContentDigest (..))
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 
-pageBlog :: Html
-pageBlog =
+pageBlog :: [ContentDigest] -> Html
+pageBlog digests =
   layoutTemplate
     "Blog"
     [shamlet|
   <h1>Blog
   <p>Here are my latest posts.
   <ul>
-    <li>Learning Haskell
-    <li>Functional Web Development
-    <li>Building with Scotty and Blaze
+    $forall ContentDigest title slug <- digests
+      <li><a href="/posts/#{slug}">#{title}
 |]

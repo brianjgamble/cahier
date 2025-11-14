@@ -1,4 +1,4 @@
-module Cahier.Core.Content.Cache (ContentDigest, ContentCache, getAllPoems, getAllPosts, getPoem, getPost, initCache) where
+module Cahier.Core.Content.Cache (ContentDigest (..), ContentCache, getAllPoems, getAllPosts, getPoem, getPost, initCache) where
 
 import Cahier.Core.Content.Types
 import Data.List (sortOn)

@@ -1,3 +1,4 @@
+import Cahier.Core.Content
 import Cahier.Web.Controllers.Blog qualified as Blog
 import Cahier.Web.Controllers.Pages qualified as Pages
 import Cahier.Web.Controllers.Poetry qualified as Poetry
@@ -14,13 +15,15 @@ render = html . R.renderHtml
 
 main :: IO ()
 main = do
+  cache <- loadContentCache "content"
   opts <- scottyOptions
+
   scottyOpts opts do
     middleware $ staticPolicy (noDots >-> addBase "static")
     middleware logStdoutDev
 
     get "/" $ render Pages.home
-    get "/posts" $ render Blog.index
+    get "/posts" $ render (Blog.index cache)
     get "/poetry" $ render Poetry.index
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
