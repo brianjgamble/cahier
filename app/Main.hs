@@ -2,6 +2,7 @@ import Cahier.Core.Content
 import Cahier.Web.Controllers.Blog qualified as Blog
 import Cahier.Web.Controllers.Pages qualified as Pages
 import Cahier.Web.Controllers.Poetry qualified as Poetry
+import Cahier.Web.Templates.NotFound (pageNotFound)
 
 import Config (scottyOptions)
 import Network.Wai.Middleware.RequestLogger (logStdoutDev)
@@ -27,3 +28,4 @@ main = do
     get "/poetry" $ render Poetry.index
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
+    notFound $ render pageNotFound

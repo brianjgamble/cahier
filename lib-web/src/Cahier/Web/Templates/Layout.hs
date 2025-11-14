@@ -13,7 +13,7 @@ layoutTemplate pageTitle content =
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
-    <title>#{pageTitle}
+    <title>#{formattedTitle pageTitle}
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@450" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
     <link rel="stylesheet" href="/css/style.css">
@@ -61,3 +61,9 @@ links =
 <li>
   <a href="/about">About
 |]
+
+formattedTitle :: T.Text -> T.Text
+formattedTitle pageTitle =
+  case T.null pageTitle of
+    True -> "Brian J. Gamble"
+    False -> pageTitle <> " • Brian J. Gamble"

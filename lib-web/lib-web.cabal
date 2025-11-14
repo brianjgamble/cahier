@@ -11,6 +11,7 @@ library
     Cahier.Web.Controllers.Poetry
     Cahier.Web.Templates.Blog.Index
     Cahier.Web.Templates.Layout
+    Cahier.Web.Templates.NotFound
     Cahier.Web.Templates.Pages.About
     Cahier.Web.Templates.Pages.Contact
     Cahier.Web.Templates.Pages.Home

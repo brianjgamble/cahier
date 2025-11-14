@@ -7,7 +7,7 @@ import Text.Hamlet (shamlet)
 pageHome :: Html
 pageHome =
   layoutTemplate
-    "Home"
+    ""
     [shamlet|
   <hgroup>
     <h1>Brian J. Gamble
