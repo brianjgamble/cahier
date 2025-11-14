@@ -24,8 +24,11 @@ layoutTemplate pageTitle content =
       <nav>
         <ul .mobile_nav>
           <li>
-            <details .dropdown>
-              <summary>Navigation
+            <details .dropdown .dropdown-toggle-no-caret>
+              <summary .menu-icon>
+                <span>
+                <span>
+                <span>
               <ul>
                 #{links}
         <ul .desktop_nav>

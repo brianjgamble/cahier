@@ -77,6 +77,10 @@ a.toggle {
   display: none;
 }
 
+details.dropdown-toggle-no-caret > summary::after {
+  display: none;
+}
+
 .lost {
   text-align: center;
 }
@@ -87,6 +91,25 @@ a.toggle {
 
 .lost h2 {
   text-transform: uppercase;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 35px;
+  gap: 4px;
+}
+
+.menu-icon span {
+  background-color: var(--pico-primary);
+  height: 3px;
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    background-color 0.3s;
 }
 
 .social {
