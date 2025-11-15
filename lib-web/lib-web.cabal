@@ -10,6 +10,7 @@ library
     Cahier.Web.Controllers.Pages
     Cahier.Web.Controllers.Poetry
     Cahier.Web.Templates.Blog.Index
+    Cahier.Web.Templates.Blog.Show
     Cahier.Web.Templates.Layout
     Cahier.Web.Templates.NotFound
     Cahier.Web.Templates.Pages.About
@@ -24,6 +25,7 @@ library
     lib-core,
     shakespeare >=2.1.7 && <2.2,
     text >=2.1.2 && <2.2,
+    time >=1.14 && <1.15,
 
   default-extensions:
     OverloadedStrings

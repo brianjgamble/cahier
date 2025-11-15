@@ -14,5 +14,6 @@ pageBlog digests =
   <p>Here are my latest posts.
   <ul>
     $forall ContentDigest title slug <- digests
-      <li><a href="/posts/#{slug}">#{title}
+      <li>
+        <a href="/posts/#{slug}">#{title}
 |]

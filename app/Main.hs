@@ -25,6 +25,11 @@ main = do
 
     get "/" $ render Pages.home
     get "/posts" $ render (Blog.index cache)
+    get "/posts/:slug" do
+      slug <- pathParam "slug"
+      case getPost slug cache of
+        Nothing -> next
+        Just blogPost -> render (Blog.view blogPost)
     get "/poetry" $ render Poetry.index
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
