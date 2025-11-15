@@ -16,7 +16,8 @@ pageBlogShow (BlogPost (PostMetadata postTitle day _ _ _) content) =
   <article>
     <h1>#{postTitle}
     <p>
-      <small>#{formattedDate day}
+      <small>
+        <i>#{formattedDate day}
     #{preEscapedToMarkup content}
 |]
 
