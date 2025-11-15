@@ -22,6 +22,12 @@ layoutTemplate pageTitle content =
   <body>
     <header .container>
       <nav>
+        <picture .logo .logo-dark>
+          <source media="(min-width:768px)" srcset="/images/logo-dark.png">
+          <img src="/images/logo-small-dark.png">
+        <picture .logo .logo-light>
+          <source media="(min-width:768px)" srcset="/images/logo-light.png">
+          <img src="/images/logo-small-light.png">
         <ul .mobile_nav>
           <li>
             <details .dropdown .dropdown-toggle-no-caret>

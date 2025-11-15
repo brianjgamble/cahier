@@ -1,3 +1,10 @@
+/**
+ * CSS Variables
+ */
+:root {
+  --mobile-link-left-pos: -53px;
+}
+
 /* Set the heading font as Space Grotesk */
 h1,
 h1,
@@ -36,6 +43,22 @@ html[data-theme="dark"] {
   --pico-h3-color: #c2c7d0;
 }
 
+.logo-dark {
+  display: none;
+}
+
+.logo-light {
+  display: inline-block;
+}
+
+html[data-theme="dark"] .logo-dark {
+  display: inline-block;
+}
+
+html[data-theme="dark"] .logo-light {
+  display: none;
+}
+
 body {
   display: flex;
   flex-direction: column;
@@ -64,6 +87,24 @@ main {
   flex: 1;
 }
 
+nav {
+  justify-content: unset;
+  align-items: center;
+}
+
+ul.mobile_nav,
+ul.desktop_nav {
+  flex-grow: 1;
+}
+
+ul.desktop_nav {
+  padding-left: 1.25rem;
+}
+
+ul.mobile_nav {
+  justify-content: end;
+}
+
 #theme_switcher {
   font-size: 1.35rem;
   vertical-align: text-bottom;
@@ -81,7 +122,16 @@ details.dropdown-toggle-no-caret > summary::after {
   display: none;
 }
 
-.lost {
+details.dropdown > summary + ul {
+  right: 0;
+  left: var(--mobile-link-left-pos);
+}
+
+.logo {
+  width: 50px;
+}
+
+.logo-dark .lost {
   text-align: center;
 }
 
@@ -121,6 +171,10 @@ details.dropdown-toggle-no-caret > summary::after {
   .desktop_nav {
     display: flex;
     gap: 1.5rem;
+  }
+
+  .logo {
+    width: 75px;
   }
 
   .mobile_nav {
