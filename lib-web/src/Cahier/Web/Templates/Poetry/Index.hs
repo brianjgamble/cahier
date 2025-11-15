@@ -1,18 +1,18 @@
 module Cahier.Web.Templates.Poetry.Index where
 
+import Cahier.Core.Content (ContentDigest (..))
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Text.Blaze.Html (Html)
 import Text.Hamlet (shamlet)
 
-pagePoetry :: Html
-pagePoetry =
+pagePoetry :: [ContentDigest] -> Html
+pagePoetry digests =
   layoutTemplate
     "Poetry"
     [shamlet|
   <h1>Poetry
-  <p>Technical and creative writings.
   <ul>
-    <li>Monads Explained Simply
-    <li>The Magic of Type Systems
-    <li>Composing Functions in Real Life
+    $forall ContentDigest title slug <- digests
+      <li>
+        <a href="/posts/#{slug}">#{title}
 |]

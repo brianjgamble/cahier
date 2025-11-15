@@ -1,7 +1,8 @@
-module Cahier.Web.Presenters.Poetry (index) where
+module Cahier.Web.Presenters.Poetry (list) where
 
+import Cahier.Core.Content (ContentCache, getAllPoems)
 import Cahier.Web.Templates.Poetry.Index (pagePoetry)
 import Text.Blaze.Html (Html)
 
-index :: Html
-index = pagePoetry
+list :: ContentCache -> Html
+list cache = pagePoetry (getAllPoems cache)

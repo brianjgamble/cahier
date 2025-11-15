@@ -29,7 +29,7 @@ main = do
       slug <- pathParam "slug"
       maybe next render (Blog.view slug cache)
 
-    get "/poetry" $ render Poetry.index
+    get "/poetry" $ render (Poetry.list cache)
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
 
