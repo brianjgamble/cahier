@@ -1,12 +1,16 @@
-module Cahier.Web.Controllers.Blog (index, view) where
+module Cahier.Web.Controllers.Blog (list, view) where
 
-import Cahier.Core.Content (BlogPost, ContentCache, getAllPosts)
+import Cahier.Core.Content (ContentCache, getAllPosts, getPost)
 import Cahier.Web.Templates.Blog.Index (pageBlog)
 import Cahier.Web.Templates.Blog.Show (pageBlogShow)
+import Data.Text (Text)
 import Text.Blaze.Html (Html)
 
-index :: ContentCache -> Html
-index cache = pageBlog (getAllPosts cache)
+list :: ContentCache -> Html
+list cache = pageBlog (getAllPosts cache)
 
-view :: BlogPost -> Html
-view = pageBlogShow
+view :: Text -> ContentCache -> Maybe Html
+view slug cache = do
+  case getPost slug cache of
+    Nothing -> Nothing
+    Just post -> Just (pageBlogShow post)

@@ -24,13 +24,14 @@ main = do
     middleware logStdoutDev
 
     get "/" $ render Pages.home
-    get "/posts" $ render (Blog.index cache)
+
+    get "/posts" $ render (Blog.list cache)
     get "/posts/:slug" do
       slug <- pathParam "slug"
-      case getPost slug cache of
-        Nothing -> next
-        Just blogPost -> render (Blog.view blogPost)
+      maybe next render (Blog.view slug cache)
+
     get "/poetry" $ render Poetry.index
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
+
     notFound $ render pageNotFound
