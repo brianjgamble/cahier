@@ -1,4 +1,4 @@
-module Cahier.Web.Controllers.Pages where
+module Cahier.Web.Presenters.Pages where
 
 import Cahier.Web.Templates.Pages.About (pageAbout)
 import Cahier.Web.Templates.Pages.Contact (pageContact)

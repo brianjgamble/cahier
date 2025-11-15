@@ -1,4 +1,4 @@
-module Cahier.Web.Controllers.Blog (list, view) where
+module Cahier.Web.Presenters.Blog (list, view) where
 
 import Cahier.Core.Content (ContentCache, getAllPosts, getPost)
 import Cahier.Web.Templates.Blog.Index (pageBlog)
