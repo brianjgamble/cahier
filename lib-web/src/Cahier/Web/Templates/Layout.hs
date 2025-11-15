@@ -14,20 +14,20 @@ layoutTemplate pageTitle content =
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
     <title>#{formattedTitle pageTitle}
+    <script src="js/load-theme.js">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@450" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <script src="/js/theme-switcher.js">
     <script type="module" src="/js/app.js">
+    <link rel="preload" href="/images/logo-dark.png" as="image">
+    <link rel="preload" href="/images/logo-light.png" as="image">
+    <link rel="preload" href="/images/logo-small-dark.png" as="image">
+    <link rel="preload" href="/images/logo-small-light.png" as="image">
   <body>
     <header .container>
       <nav>
-        <picture .logo .logo-dark>
-          <source media="(min-width:768px)" srcset="/images/logo-dark.png">
-          <img src="/images/logo-small-dark.png">
-        <picture .logo .logo-light>
-          <source media="(min-width:768px)" srcset="/images/logo-light.png">
-          <img src="/images/logo-small-light.png">
+        <a href="/">
+          <div .logo></div>
         <ul .mobile_nav>
           <li>
             <details .dropdown .dropdown-toggle-no-caret>
@@ -41,7 +41,7 @@ layoutTemplate pageTitle content =
           #{links}
         <ul>
           <li>
-            <a href="#" .toggle id="theme_switcher" title="Toggle light or dark theme">
+            <a href="#" .toggle id="theme-toggle" title="Toggle light or dark theme">
     <main .container>
       #{content}
     <footer .container>

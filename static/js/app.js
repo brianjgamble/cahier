@@ -1,2 +1,5 @@
-import "./theme-switcher.js";
-themeSwitcher.init();
+import { initThemeToggle, applySavedTheme } from "./theme.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  initThemeToggle();
+});
