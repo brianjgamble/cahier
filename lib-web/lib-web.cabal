@@ -14,7 +14,6 @@ library
     Cahier.Web.Templates.Layout
     Cahier.Web.Templates.NotFound
     Cahier.Web.Templates.Pages.About
-    Cahier.Web.Templates.Pages.Contact
     Cahier.Web.Templates.Pages.Home
     Cahier.Web.Templates.Poetry.Index
     Cahier.Web.Templates.Poetry.Show

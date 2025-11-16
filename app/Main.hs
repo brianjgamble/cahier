@@ -34,7 +34,6 @@ main = do
       slug <- pathParam "slug"
       maybe next render (Poetry.view slug cache)
 
-    get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
 
     notFound $ render Pages.notFound

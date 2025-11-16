@@ -66,8 +66,6 @@ links =
 <li>
   <a href="/poetry">Poetry
 <li>
-  <a href="/contact">Contact
-<li>
   <a href="/about">About
 |]
 

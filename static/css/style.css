@@ -2,7 +2,7 @@
  * CSS Variables
  */
 :root {
-  --mobile-link-left-pos: -53px;
+  --mobile-link-left-pos: -44px;
 }
 
 html[data-theme="dark"] {
