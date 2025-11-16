@@ -16,8 +16,7 @@ pageAbout =
   <p>Well-written code should communicate its intent clearly—what it does, why it does it, and how the pieces fit together.
   <p>When I write software, I'm crafting a narrative that other developers (and future me) need to understand. My approach is simple: get to the heart of the issue, design clear solutions, and write code that reads naturally.
   <p>But I wield more than one kind of pen. Poetry throughout this site—treasures waiting to be discovered. Fantasy fiction yet to come—stories where good triumphs over evil and tales of heroes facing impossible choices.
-  <p>In the end, it's all storytelling.
-  <p>Code that solves problems; heroes who face darkness.
+  <p>In the end, it's all storytelling. Code that solves problems; heroes who face darkness.
   <p>Both require the same dedication to craft and a belief that clarity and structure can create something meaningful.
   <p>At least, that's what I think...
 |]
