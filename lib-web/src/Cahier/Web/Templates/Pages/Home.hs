@@ -12,9 +12,9 @@ pageHome =
   <hgroup>
     <h1>Brian J. Gamble
     <h2>
-      Believer &bullet; Developer &bullet; Writer
+      Believer &bullet; Software Developer &bullet; Writer
   <p>
-    Building software is my bread and butter, but I'm also a writer.  I write poetry, and I'm working on my own fantasy world and stories.
+    Developer by trade, storyteller at heart—crafting narratives in code and prose.
 
   <article .social>
     <header>
