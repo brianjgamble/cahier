@@ -24,7 +24,7 @@ layoutTemplate pageTitle content =
     <link rel="preload" href="/images/logo-small-dark.png" as="image">
     <link rel="preload" href="/images/logo-small-light.png" as="image">
   <body>
-    <header .container>
+    <header .container .header>
       <nav>
         <a href="/">
           <div .logo></div>
@@ -44,7 +44,7 @@ layoutTemplate pageTitle content =
             <a href="#" .toggle id="theme-toggle" title="Toggle light or dark theme">
     <main .container>
       #{content}
-    <footer .container>
+    <footer .container .footer>
       <div>
         <small>
           Made with &#9749;&nbsp;+&nbsp;
