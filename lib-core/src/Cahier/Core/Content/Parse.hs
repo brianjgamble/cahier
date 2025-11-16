@@ -2,7 +2,9 @@ module Cahier.Core.Content.Parse (parsePoem, parsePost) where
 
 import Cahier.Core.Content.Types
 import Commonmark
+import Commonmark.Extensions.HardLineBreaks
 import Data.Bifunctor (first)
+import Data.Functor.Identity
 import Data.Text (Text)
 import Data.Text qualified as T
 import Data.Text.Encoding qualified as TE
@@ -36,7 +38,9 @@ extractFrontmatter input =
 
 -- Converts markdown text to HTML and returns it as strict text.
 markdownToHtml :: Text -> Text
-markdownToHtml markdownText =
-  case commonmark "inline input" markdownText :: Either ParseError (Html ()) of
+markdownToHtml inp = do
+  let customSyntax = hardLineBreaksSpec <> defaultSyntaxSpec
+      res = runIdentity $ commonmarkWith customSyntax "inline input" inp
+  case res of
     Left _ -> T.empty
-    Right html -> TL.toStrict (renderHtml html)
+    Right (html :: Html ()) -> TL.toStrict $ renderHtml html
