@@ -14,5 +14,5 @@ pagePoetry digests =
   <ul>
     $forall ContentDigest title slug <- digests
       <li>
-        <a href="/posts/#{slug}">#{title}
+        <a href="/poetry/#{slug}">#{title}
 |]

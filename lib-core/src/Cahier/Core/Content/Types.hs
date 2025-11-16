@@ -28,7 +28,7 @@ instance FromJSON PostMetadata where
 data PoemMetadata = PoemMetadata
   { poemTitle :: Text
   , poemDate :: Day
-  , poemAuthor :: Maybe Text
+  , poemAuthor :: Text
   }
   deriving (Generic, Show, Eq)
 
@@ -37,7 +37,7 @@ instance FromJSON PoemMetadata where
     PoemMetadata
       <$> v .: "title"
       <*> v .: "date"
-      <*> v .:? "author"
+      <*> v .: "author"
 
 -- | Complete blog post with metadata and content
 data BlogPost = BlogPost

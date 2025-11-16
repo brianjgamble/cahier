@@ -17,6 +17,7 @@ library
     Cahier.Web.Templates.Pages.Contact
     Cahier.Web.Templates.Pages.Home
     Cahier.Web.Templates.Poetry.Index
+    Cahier.Web.Templates.Poetry.Show
     Cahier.Web.Url
 
   build-depends:

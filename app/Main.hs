@@ -30,6 +30,10 @@ main = do
       maybe next render (Blog.view slug cache)
 
     get "/poetry" $ render (Poetry.list cache)
+    get "/poetry/:slug" do
+      slug <- pathParam "slug"
+      maybe next render (Poetry.view slug cache)
+
     get "/contact" $ render Pages.contact
     get "/about" $ render Pages.about
 
