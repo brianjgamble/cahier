@@ -23,6 +23,11 @@ html[data-theme="dark"] {
   --pico-background-color: #f5f4f0;
 }
 
+/* Set the max size of a container */
+.container:not(.wider) {
+  max-width: 1000px;
+}
+
 /* Set the heading font as Space Grotesk */
 h1,
 h1,
@@ -122,6 +127,10 @@ details.dropdown-toggle-no-caret > summary::after {
 details.dropdown > summary + ul {
   right: 0;
   left: var(--mobile-link-left-pos);
+}
+
+.center {
+  text-align: center;
 }
 
 .logo {
