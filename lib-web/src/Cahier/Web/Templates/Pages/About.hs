@@ -9,7 +9,7 @@ pageAbout =
   layoutTemplate
     "About"
     [shamlet|
-  <h1>About
+  <h1 .center>About
   <p>
     My journey in software began a generation ago. After training in the halls of my chosen guild, my path has wound
     through small startups and Fortune 500 enterprises.
