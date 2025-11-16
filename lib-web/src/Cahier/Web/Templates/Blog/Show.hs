@@ -14,10 +14,11 @@ pageBlogShow (BlogPost (PostMetadata postTitle day _ _ _) content) =
     postTitle
     [shamlet|
   <article>
-    <h1>#{postTitle}
-    <p>
-      <small>
-        <i>#{formattedDate day}
+    <header>
+      <h1>#{postTitle}
+      <p>
+        <small>
+          <i>#{formattedDate day}
     #{preEscapedToMarkup content}
 |]
 
