@@ -8,10 +8,9 @@ import Text.Hamlet (shamlet)
 pageBlog :: [ContentDigest] -> Html
 pageBlog digests =
   layoutTemplate
-    "Blog"
+    "Posts"
     [shamlet|
-  <h1>Blog
-  <p>Here are my latest posts.
+  <h1 .center>Posts Archive
   <ul>
     $forall ContentDigest title slug <- digests
       <li>

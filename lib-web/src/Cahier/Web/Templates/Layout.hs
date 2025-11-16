@@ -62,7 +62,7 @@ links =
 <li>
   <a href="/">Home
 <li>
-  <a href="/posts">Blog
+  <a href="/posts">Posts
 <li>
   <a href="/poetry">Poetry
 <li>
