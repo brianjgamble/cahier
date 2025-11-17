@@ -22,6 +22,7 @@ executable cahier
     lib-web,
     scotty >=0.22 && <0.23,
     string-interpolate >=0.3.4 && <0.4,
+    text >=2.1.2 && <2.2,
     wai-extra >=3.1.18 && <3.2,
     wai-middleware-static >=0.9.3 && <0.10,
     warp >=3.4.9 && <3.5,
