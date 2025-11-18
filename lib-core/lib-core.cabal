@@ -45,4 +45,18 @@ test-suite core-tests
     tasty-hunit >=0.10 && <0.11,
     text >=2.1.2 && <2.2,
 
+  default-extensions:
+    OverloadedStrings
+
+  default-language: GHC2024
+
+test-suite core-doctest
+  type: exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is: Doctest.hs
+  default-extensions: OverloadedStrings
+  build-depends:
+    base >=4.14 && <5,
+    doctest >=0.22,
+
   default-language: GHC2024
