@@ -26,8 +26,8 @@ layoutTemplate pageTitle content =
   <body>
     <header .container .header>
       <nav>
-        <a href="/">
-          <div .logo></div>
+        <a .logo-wrapper href="/">
+          <div .logo>
         <ul .mobile_nav>
           <li>
             <details .dropdown .dropdown-toggle-no-caret>
@@ -39,7 +39,7 @@ layoutTemplate pageTitle content =
                 #{links}
         <ul .desktop_nav>
           #{links}
-        <ul>
+        <ul .theme>
           <li>
             <a href="#" .toggle id="theme-toggle" title="Toggle light or dark theme">
     <main .container>
