@@ -3,9 +3,9 @@ import Cahier.Web.Presenters.Blog qualified as Blog
 import Cahier.Web.Presenters.Pages qualified as Pages
 import Cahier.Web.Presenters.Poetry qualified as Poetry
 
+import Cahier.Web.Logger (logStdoutCustom)
 import Config (scottyOptions)
 import Data.Text.Lazy qualified as TL
-import Network.Wai.Middleware.RequestLogger (logStdoutDev)
 import Network.Wai.Middleware.Static
 import Text.Blaze.Html (Html)
 import Text.Blaze.Html.Renderer.Text qualified as R
@@ -13,12 +13,16 @@ import Web.Scotty
 
 main :: IO ()
 main = do
+  -- Load content
   cache <- loadContentCache "content"
+
+  -- Set logger and configuration
+  logger <- logStdoutCustom
   opts <- scottyOptions
 
   scottyOpts opts do
     middleware $ staticPolicy (noDots >-> addBase "static")
-    middleware logStdoutDev
+    middleware logger
 
     get "/robots.txt" $ do
       setHeader "Content-Type" "text/plain"
