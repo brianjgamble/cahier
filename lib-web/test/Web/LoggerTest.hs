@@ -11,6 +11,7 @@ import System.IO.Silently (hCapture_)
 import Test.Tasty
 import Test.Tasty.HUnit
 
+-- Simple test application
 testApp :: Application
 testApp _req respond = respond $ responseLBS status200 [] "OK"
 
@@ -55,6 +56,52 @@ tests =
               runSession (srequest (SRequest req "")) (logger testApp)
             assertBool "should contain unix socket path" $
               isInfixOf "unix:/tmp/test.sock" output
+        ]
+    , testGroup
+        "Real IP Detection"
+        [ testCase "uses X-Forwarded-For header when present" $ do
+            logger <- logStdoutCustom
+            output <- hCapture_ [stdout] $ do
+              let req =
+                    defaultRequest
+                      { remoteHost = SockAddrInet 3000 (tupleToHostAddress (10, 0, 0, 1))
+                      , requestHeaders = [("X-Forwarded-For", "203.0.113.42, 198.51.100.1")]
+                      }
+              runSession (srequest (SRequest req "")) (logger testApp)
+            assertBool "should contain client IP from X-Forwarded-For" $
+              isInfixOf "203.0.113.42" output
+        , testCase "uses X-Real-IP header when X-Forwarded-For is absent" $ do
+            logger <- logStdoutCustom
+            output <- hCapture_ [stdout] $ do
+              let req =
+                    defaultRequest
+                      { remoteHost = SockAddrInet 3000 (tupleToHostAddress (10, 0, 0, 1))
+                      , requestHeaders = [("X-Real-IP", "203.0.113.99")]
+                      }
+              runSession (srequest (SRequest req "")) (logger testApp)
+            assertBool "should contain client IP from X-Real-IP" $
+              isInfixOf "203.0.113.99" output
+        , testCase "falls back to remoteHost when no proxy headers present" $ do
+            logger <- logStdoutCustom
+            output <- hCapture_ [stdout] $ do
+              let req =
+                    defaultRequest
+                      { remoteHost = SockAddrInet 3000 (tupleToHostAddress (192, 168, 1, 50))
+                      }
+              runSession (srequest (SRequest req "")) (logger testApp)
+            assertBool "should contain IP from remoteHost" $
+              isInfixOf "192.168.1.50" output
+        , testCase "strips whitespace from X-Forwarded-For" $ do
+            logger <- logStdoutCustom
+            output <- hCapture_ [stdout] $ do
+              let req =
+                    defaultRequest
+                      { remoteHost = SockAddrInet 3000 (tupleToHostAddress (10, 0, 0, 1))
+                      , requestHeaders = [("X-Forwarded-For", " 203.0.113.55 , 198.51.100.2")]
+                      }
+              runSession (srequest (SRequest req "")) (logger testApp)
+            assertBool "should contain trimmed client IP" $
+              isInfixOf "203.0.113.55" output
         ]
     , testGroup
         "Log Output Format"

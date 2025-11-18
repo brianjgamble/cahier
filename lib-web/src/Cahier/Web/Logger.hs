@@ -1,10 +1,12 @@
-module Cahier.Web.Logger (logStdoutCustom) where
+module Cahier.Web.Logger (
+  logStdoutCustom,
+) where
 
 import Data.Bits (shiftR, (.&.))
 import Data.ByteString.Char8 qualified as BS
 import Network.HTTP.Types (statusCode, statusMessage)
 import Network.Socket (HostAddress, SockAddr (..))
-import Network.Wai (Middleware, rawPathInfo, remoteHost, requestHeaders, requestMethod)
+import Network.Wai (Middleware, Request, rawPathInfo, remoteHost, requestHeaders, requestMethod)
 import Network.Wai.Middleware.RequestLogger
 import System.Log.FastLogger
 
@@ -14,16 +16,29 @@ formatIP (SockAddrInet _ hostAddr) = formatIPv4 hostAddr
 formatIP (SockAddrInet6 _ _ hostAddr6 _) = show hostAddr6
 formatIP (SockAddrUnix path) = "unix:" ++ path
 
+-- | Extract the real client IP from headers or socket address
+getRealIP :: Request -> String
+getRealIP req =
+  case lookup "X-Forwarded-For" (requestHeaders req) of
+    Just xff ->
+      let ips = BS.split ',' xff
+       in case ips of
+            (firstIP : _) -> BS.unpack $ BS.strip firstIP -- Take first IP and strip whitespace
+            [] -> formatIP (remoteHost req)
+    Nothing -> case lookup "X-Real-IP" (requestHeaders req) of
+      Just realIP -> BS.unpack realIP
+      Nothing -> formatIP (remoteHost req) -- Fallback to socket address
+
 -- | Convert HostAddress (Word32) to dotted decimal notation
 formatIPv4 :: HostAddress -> String
 formatIPv4 addr =
-  let byte1 = addr .&. 0xFF
-      byte2 = (addr `shiftR` 8) .&. 0xFF
-      byte3 = (addr `shiftR` 16) .&. 0xFF
-      byte4 = (addr `shiftR` 24) .&. 0xFF
-   in show byte1 ++ "." ++ show byte2 ++ "." ++ show byte3 ++ "." ++ show byte4
+  let byte1 = fromIntegral $ addr .&. 0xFF
+      byte2 = fromIntegral $ (addr `shiftR` 8) .&. 0xFF
+      byte3 = fromIntegral $ (addr `shiftR` 16) .&. 0xFF
+      byte4 = fromIntegral $ (addr `shiftR` 24) .&. 0xFF
+   in show (byte1 :: Int) ++ "." ++ show (byte2 :: Int) ++ "." ++ show (byte3 :: Int) ++ "." ++ show (byte4 :: Int)
 
-{- | Custom logger to include IP addresses
+{- | Create a custom development logger that includes IP addresses
 
 Output format:
 GET /path
@@ -41,7 +56,7 @@ logStdoutCustom = do
       }
  where
   formatWithIP _date req status _responseSize duration _reqBody _response =
-    let ip = formatIP $ remoteHost req
+    let ip = getRealIP req
         headers = requestHeaders req
         userAgent = case lookup "User-Agent" headers of
           Just ua -> "  User-Agent: " <> ua
