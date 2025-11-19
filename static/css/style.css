@@ -205,23 +205,9 @@ details.dropdown-toggle-no-caret > summary::after {
     gap: 1.5rem;
   }
 
-  .logo {
-    width: 75px;
-    height: 75px;
-  }
-
   .logo-wrapper {
     flex-grow: unset;
     order: 1;
-  }
-
-  [data-theme="light"] .logo {
-    background-image: url("/images/logo-light.png");
-  }
-
-  /* Dark theme */
-  [data-theme="dark"] .logo {
-    background-image: url("/images/logo-dark.png");
   }
 
   .mobile_nav {

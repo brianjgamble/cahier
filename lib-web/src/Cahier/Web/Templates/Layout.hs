@@ -19,8 +19,6 @@ layoutTemplate pageTitle content =
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.sand.min.css">
     <link rel="stylesheet" href="/css/style.css">
     <script type="module" src="/js/app.js">
-    <link rel="preload" href="/images/logo-dark.png" as="image">
-    <link rel="preload" href="/images/logo-light.png" as="image">
     <link rel="preload" href="/images/logo-small-dark.png" as="image">
     <link rel="preload" href="/images/logo-small-light.png" as="image">
   <body>
