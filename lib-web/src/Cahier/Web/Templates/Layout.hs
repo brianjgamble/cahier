@@ -29,10 +29,13 @@ layoutTemplate pageTitle content =
         <ul .mobile_nav>
           <li>
             <details .dropdown .dropdown-toggle-no-caret>
-              <summary .menu-icon>
-                <span>
-                <span>
-                <span>
+              <summary>
+                <div .menu-icon>
+                  <span>
+                  <span>
+                  <span>
+                <span .menu-text>
+                  Menu
               <ul>
                 #{links}
         <ul .desktop_nav>

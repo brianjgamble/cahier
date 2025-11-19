@@ -118,6 +118,9 @@ a.toggle {
 }
 
 details.dropdown summary {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   transition: none !important;
 }
 
@@ -175,8 +178,8 @@ details.dropdown-toggle-no-caret > summary::after {
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  width: 35px;
-  gap: 4px;
+  width: 20px;
+  gap: 3px;
 }
 
 .menu-icon span {
@@ -186,6 +189,11 @@ details.dropdown-toggle-no-caret > summary::after {
   transition:
     transform 0.3s,
     background-color 0.3s;
+}
+
+.menu-text {
+  color: var(--pico-primary);
+  font-size: 1.2rem;
 }
 
 .social {
