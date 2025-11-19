@@ -23,4 +23,4 @@ pageBlogShow (BlogPost (PostMetadata postTitle day _ _ _) content) =
 |]
 
 formattedDate :: Day -> T.Text
-formattedDate day = T.pack $ formatTime defaultTimeLocale "%a, %B %d %Y" day
+formattedDate day = T.pack $ formatTime defaultTimeLocale "%A, %d %B %Y" day
