@@ -5,7 +5,7 @@ author: Brian J. Gamble
 tags: [bulma css, phoenix framework]
 ---
 
-[Bulma](https://bulma.io) is a CSS framework that looks great and uses flexbox for layout. It's customizable, easy to use, and modular. I've customized it with my own colors, fonts, and sizes. Let’s walk through how I added it to my [Phoenix](http://phoenixframework.org) web application.
+[Bulma](https://bulma.io){target="_blank" rel="noopener noreferrer"} is a CSS framework that looks great and uses flexbox for layout. It's customizable, easy to use, and modular. I've customized it with my own colors, fonts, and sizes. Let’s walk through how I added it to my [Phoenix](http://phoenixframework.org){target="_blank" rel="noopener noreferrer"} web application.
 
 > The following instructions are based on Bulma 0.6.1, Phoenix 1.3 and node 6.11.5 but should work fine with newer versions. YMMV.
 
