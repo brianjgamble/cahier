@@ -1,26 +1,25 @@
 /**
  * CSS Variables
  */
-:root {
-  --mobile-link-left-pos: -44px;
-}
 
 html[data-theme="dark"] {
-  --pico-primary: #b5b3ad;
   --pico-background-color: #122330;
-  --pico-code-background-color: #1c364a;
-  --pico-form-element-active-background-color: #1c364a;
-  --pico-card-sectioning-background-color: #1c364a;
+  --pico-blockquote-border-color: #3b465c;
   --pico-card-background-color: #152837;
-  --pico-dropdown-background-color: #152837;
-  --pico-muted-color: #62717d;
+  --pico-card-sectioning-background-color: #1c364a;
+  --pico-code-background-color: #132d41;
   --pico-color: #c2c7d0;
+  --pico-dropdown-background-color: #152837;
+  --pico-form-element-active-background-color: #1c364a;
   --pico-h3-color: #c2c7d0;
+  --pico-muted-color: #62717d;
+  --pico-primary: #b5b3ad;
 }
 
 [data-theme="light"],
 :root:not([data-theme="dark"]) {
   --pico-background-color: #f5f4f0;
+  --pico-code-background-color: #fff;
 }
 
 /* Set the max size of a container */
@@ -53,6 +52,9 @@ h6 {
   }
 }
 
+[data-theme="light"] blockquote {
+  background-color: #fff;
+}
 body {
   display: flex;
   flex-direction: column;
