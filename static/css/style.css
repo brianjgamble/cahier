@@ -1,6 +1,13 @@
 /**
  * CSS Variables
  */
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/fonts/SpaceGrotesk-Medium.ttf");
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
 
 html[data-theme="dark"] {
   --pico-background-color: #122330;
@@ -37,19 +44,6 @@ h5,
 h6 {
   font-family: "Space Grotesk";
   font-weight: 400;
-}
-
-@supports (font-variation-settings: "wght" 450) {
-  h1,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: "Space Grotesk";
-    font-weight: 450;
-  }
 }
 
 [data-theme="light"] blockquote {
