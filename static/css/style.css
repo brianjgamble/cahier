@@ -194,6 +194,13 @@ details.dropdown-toggle-no-caret > summary::after {
   margin-top: 3rem;
 }
 
+.summary {
+  color: var(--pico-muted-color);
+  font-size: 0.8rem;
+  font-style: italic;
+  text-align: center;
+}
+
 .theme {
   order: 3;
 }

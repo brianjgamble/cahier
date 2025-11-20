@@ -10,7 +10,8 @@ pagePoetry digests =
   layoutTemplate
     "Poetry"
     [shamlet|
-  <h1 .center>Poetry
+  <h1 .center>Poetry.
+  <p .summary>Compilation of my poems
   <ul>
     $forall ContentDigest title slug <- digests
       <li>
