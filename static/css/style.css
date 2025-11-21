@@ -11,7 +11,7 @@
 
 /**
  * Color theme overrides
- * They are specified twice so the color will consistent with the system color theme
+ * The dark colors are listed twice so the colors are consistent with the system color theme
  * when Javascript is disabled.
  */
 [data-theme="light"],
