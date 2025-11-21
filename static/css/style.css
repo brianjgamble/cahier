@@ -23,6 +23,7 @@
 
   /* app overrides */
   --blockquote-background-color: #fff;
+  --blockquote-border-color: var(--pico-blockquote-border-color);
   --logo-background-url: url("/images/logo-small-light.png");
 }
 
@@ -43,7 +44,8 @@
     --pico-primary: #b5b3ad;
 
     /* app overrides */
-    --blockquote-background-color: inherit;
+    --blockquote-background-color: #424751;
+    --blockquote-border-color: #6f7887;
     --logo-background-url: url("/images/logo-small-dark.png");
   }
 }
@@ -63,7 +65,8 @@
   --pico-primary: #b5b3ad;
 
   /* app overrides */
-  --blockquote-background-color: inherit;
+  --blockquote-background-color: #424751;
+  --blockquote-border-color: #6f7887;
   --logo-background-url: url("/images/logo-small-dark.png");
 }
 
@@ -86,7 +89,9 @@ h6 {
 
 blockquote {
   background-color: var(--blockquote-background-color);
+  border-left-color: var(--blockquote-border-color);
 }
+
 body {
   display: flex;
   flex-direction: column;
