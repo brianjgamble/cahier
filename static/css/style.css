@@ -1,5 +1,5 @@
 /**
- * CSS Variables
+ * Fonts
  */
 @font-face {
   font-family: "Space Grotesk";
@@ -9,7 +9,47 @@
   font-style: normal;
 }
 
-html[data-theme="dark"] {
+/**
+ * Color theme overrides
+ * They are specified twice so the color will consistent with the system color theme
+ * when Javascript is disabled.
+ */
+[data-theme="light"],
+:root:not([data-theme="dark"]),
+:host(:not([data-theme="dark"])) {
+  /* pico overrides */
+  --pico-background-color: #f5f4f0;
+  --pico-code-background-color: #fff;
+
+  /* app overrides */
+  --blockquote-background-color: #fff;
+  --logo-background-url: url("/images/logo-small-light.png");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]),
+  :host(:not([data-theme])) {
+    /* pico overrides */
+    --pico-background-color: #122330;
+    --pico-blockquote-border-color: #3b465c;
+    --pico-card-background-color: #152837;
+    --pico-card-sectioning-background-color: #1c364a;
+    --pico-code-background-color: #132d41;
+    --pico-color: #c2c7d0;
+    --pico-dropdown-background-color: #152837;
+    --pico-form-element-active-background-color: #1c364a;
+    --pico-h3-color: #c2c7d0;
+    --pico-muted-color: #62717d;
+    --pico-primary: #b5b3ad;
+
+    /* app overrides */
+    --blockquote-background-color: inherit;
+    --logo-background-url: url("/images/logo-small-dark.png");
+  }
+}
+
+[data-theme="dark"] {
+  /* pico overrides */
   --pico-background-color: #122330;
   --pico-blockquote-border-color: #3b465c;
   --pico-card-background-color: #152837;
@@ -21,12 +61,10 @@ html[data-theme="dark"] {
   --pico-h3-color: #c2c7d0;
   --pico-muted-color: #62717d;
   --pico-primary: #b5b3ad;
-}
 
-[data-theme="light"],
-:root:not([data-theme="dark"]) {
-  --pico-background-color: #f5f4f0;
-  --pico-code-background-color: #fff;
+  /* app overrides */
+  --blockquote-background-color: inherit;
+  --logo-background-url: url("/images/logo-small-dark.png");
 }
 
 /* Set the max size of a container */
@@ -46,8 +84,8 @@ h6 {
   font-weight: 400;
 }
 
-[data-theme="light"] blockquote {
-  background-color: #fff;
+blockquote {
+  background-color: var(--blockquote-background-color);
 }
 body {
   display: flex;
@@ -133,6 +171,7 @@ details.dropdown-toggle-no-caret > summary::after {
 .logo {
   width: 50px;
   height: 50px;
+  background-image: var(--logo-background-url);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -144,14 +183,6 @@ details.dropdown-toggle-no-caret > summary::after {
 .logo-wrapper {
   flex: 1;
   order: 2;
-}
-
-[data-theme="light"] .logo {
-  background-image: url("/images/logo-small-light.png");
-}
-
-[data-theme="dark"] .logo {
-  background-image: url("/images/logo-small-dark.png");
 }
 
 .lost {
