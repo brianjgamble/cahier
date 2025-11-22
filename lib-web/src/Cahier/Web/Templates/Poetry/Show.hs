@@ -7,16 +7,16 @@ import Text.Blaze.Html (Html, preEscapedToMarkup)
 import Text.Hamlet (shamlet)
 
 pagePoem :: Poem -> Html
-pagePoem (Poem (PoemMetadata postTitle postDate postAuthor) content) =
+pagePoem (Poem (PoemMetadata title date author) content) =
   layoutTemplate
-    postTitle
+    title
     [shamlet|
   <article>
     <header>
-      <h1>#{postTitle}
+      <h1>#{title}
       <p>
         <small>
-          <i>By #{postAuthor}, #{getYear postDate}
+          <i>By #{author}, #{getYear date}
     #{preEscapedToMarkup content}
 |]
 

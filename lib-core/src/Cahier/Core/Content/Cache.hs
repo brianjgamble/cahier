@@ -52,11 +52,11 @@ initCache posts poems =
 
 -- Extract title from poem
 getPoemTitle :: Poem -> Text
-getPoemTitle (Poem (PoemMetadata poemTitle _ _) _) = poemTitle
+getPoemTitle (Poem (PoemMetadata title _ _) _) = title
 
 -- Extract date from post for sorting
 getPostDate :: BlogPost -> Day
-getPostDate (BlogPost (PostMetadata _ postDate _ _ _) _) = postDate
+getPostDate (BlogPost (PostMetadata _ date _ _ _) _) = date
 
 -- Convert the incoming poem tuples to a map of poems
 poemsMap :: [(Text, Poem)] -> Map Text Poem
@@ -68,11 +68,11 @@ postsMap = Map.fromList
 
 -- Convert the poems into a sorted list of ContentDigests
 sortedPoemDigests :: [(Text, Poem)] -> [ContentDigest]
-sortedPoemDigests = map (\(slug, Poem (PoemMetadata poemTitle _ _) _) -> ContentDigest poemTitle slug) . sortedPoems
+sortedPoemDigests = map (\(slug, Poem (PoemMetadata title _ _) _) -> ContentDigest title slug) . sortedPoems
 
 -- Convert the posts into a sorted list of ContentDigests
 sortedPostDigests :: [(Text, BlogPost)] -> [ContentDigest]
-sortedPostDigests = map (\(slug, BlogPost (PostMetadata postTitle _ _ _ _) _) -> ContentDigest postTitle slug) . sortedPosts
+sortedPostDigests = map (\(slug, BlogPost (PostMetadata title _ _ _ _) _) -> ContentDigest title slug) . sortedPosts
 
 -- Sort poems by title
 sortedPoems :: [(Text, Poem)] -> [(Text, Poem)]

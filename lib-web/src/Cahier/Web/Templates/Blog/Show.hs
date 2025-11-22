@@ -9,13 +9,13 @@ import Text.Blaze.Html (Html, preEscapedToMarkup)
 import Text.Hamlet (shamlet)
 
 pageBlogShow :: BlogPost -> Html
-pageBlogShow (BlogPost (PostMetadata postTitle day _ _ _) content) =
+pageBlogShow (BlogPost (PostMetadata title day _ _ _) content) =
   layoutTemplate
-    postTitle
+    title
     [shamlet|
   <article>
     <header>
-      <h1>#{postTitle}
+      <h1>#{title}
       <p>
         <small>
           <i>#{formattedDate day}
