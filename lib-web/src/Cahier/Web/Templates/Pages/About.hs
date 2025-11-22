@@ -10,7 +10,7 @@ pageAbout =
     "About"
     [shamlet|
   <h1 .center>About.
-  <p .summary>Getting to know the writer behind the pages
+  <p .summary>Getting to know the writer behind the pages...
   <p>
     My journey in software began a generation ago. After training in the halls of my chosen guild, my path has wound
     through small startups and Fortune 500 enterprises.
