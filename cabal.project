@@ -1,9 +1,13 @@
 packages:
   ./cahier.cabal
-  ./lib-core/lib-core.cabal
   ./lib-web/lib-web.cabal
 
 -- Optional: common settings
 package *
   ghc-options: -Wall
   optimization: True
+
+source-repository-package
+  type: git
+  location: https://github.com/brianjgamble/cahier-content.git
+  tag: v0.5.0.0

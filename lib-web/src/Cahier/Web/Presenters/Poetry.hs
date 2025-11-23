@@ -1,6 +1,6 @@
 module Cahier.Web.Presenters.Poetry (list, view) where
 
-import Cahier.Core.Content (ContentCache, getAllPoems, getPoem)
+import Cahier.Content (ContentCache, getAllPoems, getPoem)
 import Cahier.Web.Templates.Poetry.Index (pagePoetry)
 import Cahier.Web.Templates.Poetry.Show (pagePoem)
 import Data.Text (Text)

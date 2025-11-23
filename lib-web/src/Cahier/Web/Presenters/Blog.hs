@@ -1,6 +1,6 @@
 module Cahier.Web.Presenters.Blog (list, view) where
 
-import Cahier.Core.Content (ContentCache, getAllPosts, getPost)
+import Cahier.Content (ContentCache, getAllPosts, getPost)
 import Cahier.Web.Templates.Blog.Index (pageBlog)
 import Cahier.Web.Templates.Blog.Show (pageBlogShow)
 import Data.Text (Text)

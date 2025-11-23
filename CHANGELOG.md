@@ -1,5 +1,9 @@
 # Revision history for cahier
 
+## 0.3.0 -- 2025-11-22
+
+- Moved `lib-core` into a separate library
+
 ## 0.2.0.0 -- 2025-11-04
 
 - Converted project to a monorepo structure

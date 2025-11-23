@@ -1,6 +1,6 @@
 module Cahier.Web.Templates.Blog.Show (pageBlogShow) where
 
-import Cahier.Core.Content (BlogPost (..), PostMetadata (..))
+import Cahier.Content (BlogPost (..), PostMetadata (..))
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Data.Text qualified as T
 import Data.Time.Calendar (Day)

@@ -1,6 +1,6 @@
 module Cahier.Web.Templates.Poetry.Show (pagePoem) where
 
-import Cahier.Core.Content (Poem (..), PoemMetadata (..))
+import Cahier.Content (Poem (..), PoemMetadata (..))
 import Cahier.Web.Templates.Layout (layoutTemplate)
 import Data.Time.Calendar (Day, toGregorian)
 import Text.Blaze.Html (Html, preEscapedToMarkup)
