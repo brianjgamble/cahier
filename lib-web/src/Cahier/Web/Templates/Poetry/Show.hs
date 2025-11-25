@@ -7,7 +7,7 @@ import Text.Blaze.Html (Html, preEscapedToMarkup)
 import Text.Hamlet (shamlet)
 
 pagePoem :: Poem -> Html
-pagePoem (Poem (PoemMetadata title date author) content) =
+pagePoem (MkPoem (MkPoemMetadata title date author) content) =
   layoutTemplate
     title
     [shamlet|
