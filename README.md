@@ -8,7 +8,7 @@
 
 ## 🏗️ Work in Progress 🏗️
 
-This project is under active development. I'm slowly migrating http://www.brianjgamble.com to this new Haskell project.
+This project is under active development.
 
 ## What is this?
 
