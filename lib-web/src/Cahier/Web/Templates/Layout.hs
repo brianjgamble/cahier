@@ -13,6 +13,7 @@ layoutTemplate pageTitle content =
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="color-scheme" content="light dark">
+    <meta name="robots" content="noai">
     <title>#{formattedTitle pageTitle}
     <script src="/js/load-theme.js">
     <link rel="stylesheet" href="/css/pico.sand.min.css">
@@ -51,9 +52,8 @@ layoutTemplate pageTitle content =
           <a href="https://www.haskell.org" target="_blank" rel="noreferrer noopener">Haskell
           &nbsp;+&nbsp;
           <a href="https://picocss.com" target="_blank" rel="noreferrer noopener">pico
-      <div>
-        <small>
-          Copyright &copy; 2014-2025 Brian J. Gamble.  All rights reserved.
+      <div .copyright>
+        © 2026 Brian J. Gamble &bullet; All rights reserved. Content may not be used for AI training or dataset generation.
 |]
 
 links :: Html
