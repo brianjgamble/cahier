@@ -24,4 +24,4 @@ scottyOptions = do
   let settings_with_log = setBeforeMainLoop (putStrLn [i|Server running on #{host}:#{port}|]) settings
 
   -- Scotty options
-  pure $ Options 0 settings_with_log
+  pure $ Options 0 settings_with_log False
