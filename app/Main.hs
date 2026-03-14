@@ -49,23 +49,98 @@ render = html . R.renderHtml
 
 robotsTxt :: TL.Text
 robotsTxt =
-  TL.unlines
-    [ "User-agent: *"
-    , "Allow: /"
-    , ""
-    , "# Block common AI crawlers"
-    , "User-agent: GPTBot"
-    , "Disallow: /"
-    , ""
-    , "User-agent: ChatGPT-User"
-    , "Disallow: /"
-    , ""
-    , "User-agent: CCBot"
-    , "Disallow: /"
-    , ""
-    , "User-agent: anthropic-ai"
-    , "Disallow: /"
-    , ""
-    , "User-agent: Claude-Web"
-    , "Disallow: /"
-    ]
+  TL.pack
+    """
+    User-agent: *
+    Allow: /
+
+    # ---------------------------
+    # OpenAI
+    # ---------------------------
+    User-agent: GPTBot
+    Disallow: /
+
+    # ---------------------------
+    # Google AI training
+    # ---------------------------
+    User-agent: Google-Extended
+    Disallow: /
+
+    # ---------------------------
+    # Anthropic
+    # ---------------------------
+    User-agent: ClaudeBot
+    Disallow: /
+
+    # ---------------------------
+    # Perplexity
+    # ---------------------------
+    User-agent: PerplexityBot
+    Disallow: /
+
+    # ---------------------------
+    # Amazon AI
+    # ---------------------------
+    User-agent: Amazonbot
+    Disallow: /
+
+    # ---------------------------
+    # Apple AI training
+    # ---------------------------
+    User-agent: Applebot-Extended
+    Disallow: /
+
+    # ---------------------------
+    # ByteDance / TikTok
+    # ---------------------------
+    User-agent: Bytespider
+    Disallow: /
+
+    # ---------------------------
+    # Common Crawl (many AI datasets)
+    # ---------------------------
+    User-agent: CCBot
+    Disallow: /
+
+    # ---------------------------
+    # Meta / Facebook research crawlers
+    # ---------------------------
+    User-agent: FacebookBot
+    Disallow: /
+
+    User-agent: Meta-ExternalAgent
+    Disallow: /
+
+    # ---------------------------
+    # AI dataset & scraping companies
+    # ---------------------------
+    User-agent: Diffbot
+    Disallow: /
+
+    User-agent: DataForSeoBot
+    Disallow: /
+
+    User-agent: ImagesiftBot
+    Disallow: /
+
+    User-agent: OAI-SearchBot
+    Disallow: /
+
+    # ---------------------------
+    # Misc aggressive scrapers
+    # ---------------------------
+    User-agent: PetalBot
+    Disallow: /
+
+    User-agent: SemrushBot
+    Disallow: /
+
+    User-agent: AhrefsBot
+    Disallow: /
+
+    User-agent: MJ12bot
+    Disallow: /
+
+    User-agent: DotBot
+    Disallow: /
+    """

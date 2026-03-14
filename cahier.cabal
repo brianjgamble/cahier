@@ -29,6 +29,7 @@ executable cahier
 
   default-extensions:
     BlockArguments
+    MultilineStrings
     OverloadedStrings
     QuasiQuotes
 
