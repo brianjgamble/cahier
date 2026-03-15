@@ -2,7 +2,7 @@
 
 BSD 3-Clause License
 
-Copyright 2025 Brian J. Gamble
+Copyright 2026 Brian J. Gamble
 
 Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
 
