@@ -6,10 +6,6 @@
 
 # &#x1F4D3; Cahier
 
-## 🏗️ Work in Progress 🏗️
-
-This project is under active development.
-
 ## What is this?
 
 This is the code for my personal ~~notebook~~ website.
@@ -26,9 +22,7 @@ If you want to build a web application using Haskell (or aspire to), this is a p
 
 Why code it in Haskell? Why not? Building a real project will help me learn the language, improve my functional design skills, and build a website that is specific to my needs.
 
-## License
+## Licenses
 
-The code in this repository is licensed under the [BSD 3-Clause License](LICENSE-code.md).
-
-The written content (blog posts, poetry, and other prose) is
-Copyright © 2014 - 2025 Brian J. Gamble. All Rights Reserved.
+- Code: [BSD 3-Clause License](LICENSE-code.md)
+- Content: [LICENSE-content](LICENSE-content.md)
