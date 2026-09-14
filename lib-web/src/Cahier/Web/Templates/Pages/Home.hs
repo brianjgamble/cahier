@@ -21,7 +21,7 @@ pageHome =
         Projects
       <ul>
         <li>
-          <a href="https://corundumengine.github.io" target="_blank" rel="noreferrer noopener">Corundum Engine</a>
+          <a href="https://corundumengine.com/" target="_blank" rel="noreferrer noopener">Corundum Engine</a>
 
   <article .social>
     <header>
