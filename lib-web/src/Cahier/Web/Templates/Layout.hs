@@ -53,7 +53,7 @@ layoutTemplate pageTitle content =
           &nbsp;+&nbsp;
           <a href="https://picocss.com" target="_blank" rel="noreferrer noopener">pico
       <div .copyright>
-        © 2026 Brian J. Gamble &bullet; All rights reserved. Content may not be used for AI training or dataset generation.
+        © 2014 - 2026 Brian J. Gamble &bullet; All rights reserved. Content may not be used for AI training or dataset generation.
 |]
 
 links :: Html
