@@ -17,10 +17,18 @@ pageHome =
     Developer by trade, storyteller at heart—crafting narratives in code and prose.
 
   <article .social>
+      <header>
+        Projects
+      <ul>
+        <li>
+          <a href="https://corundumengine.github.io" target="_blank" rel="noreferrer noopener">Corundum Engine</a>
+
+  <article .social>
     <header>
       Social Links
     <ul>
       <li><a href="https://github.com/brianjgamble" target="_blank" rel="noreferrer noopener">GitHub</a>
       <li><a href="https://x.com/brianjgamble" target="_blank" rel="noreferrer noopener">X</a>
       <li><a href="https://www.linkedin.com/in/bjgamble/" target="_blank" rel="noreferrer noopener">LinkedIn</a>
+
 |]

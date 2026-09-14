@@ -232,6 +232,10 @@ details.dropdown-toggle-no-caret > summary::after {
   font-size: 1.2rem;
 }
 
+.projects {
+  margin-top: 3rem;
+}
+
 .social {
   margin-top: 3rem;
 }
@@ -265,6 +269,10 @@ details.dropdown-toggle-no-caret > summary::after {
 
   .mobile_nav {
     display: none;
+  }
+
+  .projects {
+    width: 75%;
   }
 
   .social {
